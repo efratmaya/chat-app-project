@@ -6,6 +6,8 @@ from datetime import datetime
 
 
 app = Flask(__name__)
+
+
 app.secret_key = '1234' 
 # app.config['SESSION_COOKIE_SECURE'] = False 
 @app.route('/logout')
@@ -82,8 +84,9 @@ def lobby():
       rooms[i] = rooms[i][:-4]
     return render_template('lobby.html', rooms=rooms)
  else:
+
         return redirect('/')
- 
+
     
 @app.route('/api/chat/<room>', methods=['GET', 'POST'])
 def render_chat(room):
