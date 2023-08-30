@@ -1,6 +1,6 @@
 # set base image (host OS)
 FROM python:3.8-slim-buster
-RUN update-ca-certificates
+
 # set the working directory in the container
 WORKDIR /code
 # command to run on development inviroment
@@ -15,8 +15,7 @@ RUN pip install --trusted-host pypi.org --trusted-host files.pythonhosted.org -r
 COPY / .
 #publish on port 5000
 EXPOSE 5000
+
 #health check
 HEALTHCHECK --interval=10s --timeout=3s CMD curl -f http://localhost:5000/health || exit 1
 CMD [ "python", "./chatApp.py" ]
-
-

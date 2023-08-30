@@ -128,7 +128,7 @@ def clear_chat(room):
         
 @app.route('/health')
 def health():
-    return "ok",200
+    return "OK", 200
         
 
 
