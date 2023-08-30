@@ -4,9 +4,7 @@ import os
 import base64
 from datetime import datetime
 
-
 app = Flask(__name__)
-
 
 app.secret_key = '1234' 
 # app.config['SESSION_COOKIE_SECURE'] = False 
