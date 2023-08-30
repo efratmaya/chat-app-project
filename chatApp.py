@@ -115,8 +115,18 @@ def chat(room):
 def clear_chat(room):
     path=os.getenv('ROOMS_FILES_PATH')+room+".txt"
     if request.method == 'POST':
-         with open(path, "w") as file:
-            file.write('')
+         current_user = session['username']
+         with open(path, "r") as file:
+             file.seek(0)
+             lines = file.readlines()
+            #  for line in lines:
+            #      if current_user in line:
+            #          lines.
+             lines_without_user = [line for line in lines if current_user not in line]
+              
+             with open(path, "w") as file:
+               file.writelines(lines_without_user)
+    
         
 @app.route('/health')
 def health():
