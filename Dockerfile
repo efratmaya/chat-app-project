@@ -13,5 +13,6 @@ EXPOSE 5000
 # command to run on container start
 ENV FLASK_ENV development
 ENV ROOMS_FILES_PATH rooms/
+HEALTHCHECK --interval=10s --timeout=3s CMD curl -f http://localhost:5000/health || exit 1
 CMD [ "python", "./chatApp.py" ]
 

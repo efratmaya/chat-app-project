@@ -120,7 +120,10 @@ def clear_room(room):
          return redirect('/')
         #with open(path, 'w'):pass
         
-    
+
+@app.route('/health')
+def health():
+    return "ok",200
         
 
 
