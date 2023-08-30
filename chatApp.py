@@ -117,10 +117,7 @@ def clear_chat(room):
     if request.method == 'POST':
          with open(path, "w") as file:
             file.write('')
-         #return redirect('/')
-        #with open(path, 'w'):pass
         
-
 @app.route('/health')
 def health():
     return "ok",200
