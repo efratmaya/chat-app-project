@@ -111,13 +111,13 @@ def chat(room):
         return redirect('/')
 
 
-@app.route('/api/chat/<room>/clear', methods=['POST'])
-def clear_room(room):
+@app.route('/api/chat_clear/<room>', methods=['POST'])
+def clear_chat(room):
     path=os.getenv('ROOMS_FILES_PATH')+room+".txt"
-    if request.method == "POST":
-         with open(path, "a") as file:
+    if request.method == 'POST':
+         with open(path, "w") as file:
             file.write('')
-         return redirect('/')
+         #return redirect('/')
         #with open(path, 'w'):pass
         
 

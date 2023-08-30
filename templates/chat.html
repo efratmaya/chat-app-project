@@ -17,7 +17,7 @@
       function room_delete() {
         var room = window.location.href.substring(window.location.href.lastIndexOf("/")+1);
         if (room=="") room = "general";
-        return "/api/chat/"+room+"/clear";
+        return "/api/chat_clear/"+room;
       }
 
       function updateChat() {

@@ -7,13 +7,13 @@ fi
 
 version="$1"
 commit_hash="$2"
-git log --oneline | grep -q "$commit_hash"
+# git log --oneline | grep -q "$commit_hash"
 
-  if [ $? -eq 0 ]; then
-    echo "Hash $commit_hash found in Git log."
-  else
-    echo "Hash $hash not found in Git log."
-  fi
+#   if [ $? -eq 0 ]; then
+#     echo "Hash $commit_hash found in Git log."
+#   else
+#     echo "Hash $hash not found in Git log."
+#   fi
 
 image_name="chat app"
 
