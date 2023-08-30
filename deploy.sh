@@ -10,7 +10,15 @@ fi
 version="$1"
 commit_hash="$2"
 
-image_name="your-docker-image"
+git log --oneline | grep -q "$commit_hash"
+
+  if [ $? -eq 0 ]; then
+    echo "Hash $commit_hash found in Git log."
+  else
+    echo "Hash $hash not found in Git log."
+  fi
+
+image_name="chat app"
 
 # Create a tag for the commit
 tag="$version"
