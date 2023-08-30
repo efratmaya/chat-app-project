@@ -109,7 +109,19 @@ def chat(room):
         return render_template('chat.html', room=room)
     else:
         return redirect('/')
+
+
+@app.route('/api/chat/<room>/clear', methods=['POST'])
+def clear_room(room):
+    path=os.getenv('ROOMS_FILES_PATH')+room+".txt"
+    if request.method == "POST":
+         with open(path, "a") as file:
+            file.write('')
+         return redirect('/')
+        #with open(path, 'w'):pass
+        
     
+        
 
 
 if __name__ == '__main__':
